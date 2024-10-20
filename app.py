@@ -33,7 +33,7 @@ def transcribe():
     
     return jsonify(transcripts), 200
 
-# Function to get the video ID from the URL
+# Function to get the video ID from the YouTube URL
 def get_video_id(youtube_url):
     yt = YouTube(youtube_url)
     return yt.video_id
