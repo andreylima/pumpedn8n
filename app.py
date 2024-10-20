@@ -24,7 +24,7 @@ def transcribe():
     
     for url in urls:
         video_id = get_video_id(url)
-        transcript, error = get_transcript(video_id, language='en')
+        transcript, error = get_transcript(video_id, language='pt')
         
         if transcript:
             transcripts[url] = transcript
@@ -39,7 +39,7 @@ def get_video_id(youtube_url):
     return yt.video_id
 
 # Function to get the transcript of a video using YouTubeTranscriptApi
-def get_transcript(video_id, language='en'):
+def get_transcript(video_id, language='pt'):
     try:
         transcript = YouTubeTranscriptApi.get_transcript(video_id, languages=[language])
     except TranscriptsDisabled:
